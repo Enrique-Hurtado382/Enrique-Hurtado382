@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#06061a" />
+    <title>Trampa Arcade</title>
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="game" width="480" height="272" aria-label="Juego"></canvas>
+
+      <header id="hud" hidden>
+        <span id="hud-level"></span>
+        <span class="hud-right">
+          <button id="hud-skip" class="chip" hidden>¿SALTAR?</button>
+          <span id="hud-deaths" aria-label="Muertes"></span>
+          <button id="hud-pause" class="chip" aria-label="Pausa">II</button>
+        </span>
+      </header>
+
+      <section id="s-title" class="screen">
+        <h1 class="logo"><span>TRAMPA</span><span>ARCADE</span></h1>
+        <p class="tagline">Nada es lo que parece</p>
+        <div class="menu">
+          <button class="btn big" data-action="play">JUGAR</button>
+          <button class="btn" data-action="universes">UNIVERSOS</button>
+          <button class="btn" data-action="settings">AJUSTES</button>
+          <button class="btn gold" data-action="remove-ads" id="btn-remove-ads">SIN ANUNCIOS <span class="price"></span></button>
+        </div>
+        <p class="footnote" id="title-deaths"></p>
+      </section>
+
+      <section id="s-universes" class="screen" hidden>
+        <div class="bar"><button class="chip" data-action="back">◀</button><h2>UNIVERSOS</h2></div>
+        <div class="universes" id="universe-list"></div>
+      </section>
+
+      <section id="s-levels" class="screen" hidden>
+        <div class="bar"><button class="chip" data-action="universes">◀</button><h2 id="levels-title"></h2></div>
+        <div class="levels" id="level-list"></div>
+      </section>
+
+      <section id="s-settings" class="screen" hidden>
+        <div class="bar"><button class="chip" data-action="back">◀</button><h2>AJUSTES</h2></div>
+        <div class="menu narrow">
+          <button class="btn toggle" data-setting="sfx">SONIDO <span></span></button>
+          <button class="btn toggle" data-setting="music">MUSICA <span></span></button>
+          <button class="btn toggle" data-setting="vibration">VIBRACION <span></span></button>
+          <button class="btn small" data-action="restore">RESTAURAR COMPRAS</button>
+          <button class="btn small" data-action="privacy">POLITICA DE PRIVACIDAD</button>
+          <button class="btn small" data-action="ad-privacy" hidden>CONSENTIMIENTO DE ANUNCIOS</button>
+          <button class="btn small" data-action="credits">CREDITOS</button>
+        </div>
+      </section>
+
+      <section id="s-credits" class="screen" hidden>
+        <div class="bar"><button class="chip" data-action="settings">◀</button><h2>CREDITOS</h2></div>
+        <div class="panel text">
+          <p>TRAMPA ARCADE</p>
+          <p>Un juego de Enrique Hurtado.</p>
+          <p>Fuente: Press Start 2P (CodeMan38, licencia SIL OFL).</p>
+          <p>Música y efectos generados por código.</p>
+        </div>
+      </section>
+
+      <section id="s-pause" class="screen dim" hidden>
+        <h2>PAUSA</h2>
+        <div class="menu">
+          <button class="btn big" data-action="resume">CONTINUAR</button>
+          <button class="btn" data-action="restart">REINICIAR NIVEL</button>
+          <button class="btn gold" data-action="skip" id="btn-skip">SALTAR NIVEL</button>
+          <button class="btn" data-action="quit">SALIR AL MENU</button>
+        </div>
+      </section>
+
+      <section id="s-universe-done" class="screen dim" hidden>
+        <h2 id="done-title"></h2>
+        <p class="tagline" id="done-text"></p>
+        <div class="menu">
+          <button class="btn big" data-action="next-universe" id="btn-next-universe">SIGUIENTE</button>
+          <button class="btn" data-action="quit">MENU</button>
+        </div>
+      </section>
+
+      <div id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <div id="controls" hidden>
+      <div id="pad-move" aria-label="Mover"><span>◀</span><span>▶</span></div>
+      <div id="pad-jump" aria-label="Saltar">▲</div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>

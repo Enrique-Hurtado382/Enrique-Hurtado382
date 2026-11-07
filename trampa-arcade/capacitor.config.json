@@ -1,0 +1,13 @@
+{
+  "appId": "com.enriquehurtado.trampaarcade",
+  "appName": "Trampa Arcade",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#06061a"
+  },
+  "plugins": {
+    "NativePurchases": {
+      "autoFinishTransactions": true
+    }
+  }
+}
