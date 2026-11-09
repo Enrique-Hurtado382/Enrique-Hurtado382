@@ -1,0 +1,8 @@
+{
+  "appId": "com.enriquehurtado.zonamuerta",
+  "appName": "Zona Muerta",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#0c0f0a"
+  }
+}

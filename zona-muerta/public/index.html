@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#0c0f0a" />
+    <title>Zona Muerta</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+
+    <div id="touch-layer">
+      <div id="stick"><div id="stick-knob"></div></div>
+    </div>
+
+    <div id="hud" hidden>
+      <div class="hud-tl">
+        <div class="bar"><span class="ico">✚</span><div class="track"><div id="bar-health" class="fill red"></div></div></div>
+        <div class="bar"><span class="ico">🍖</span><div class="track"><div id="bar-hunger" class="fill orange"></div></div></div>
+        <div class="bar"><span class="ico">⚡</span><div class="track"><div id="bar-stamina" class="fill cyan"></div></div></div>
+      </div>
+      <div class="hud-tr">
+        <div class="info"><span id="clock">08:30</span><span id="day">DÍA 1</span><span id="kills">☠ 0</span></div>
+        <button class="hbtn" id="btn-bag" aria-label="Mochila">🎒</button>
+        <button class="hbtn" id="btn-pause" aria-label="Pausa">❚❚</button>
+      </div>
+      <div id="crosshair"><span></span></div>
+      <div id="hitmark">✕</div>
+      <div id="ammo"><b id="ammo-clip">12</b><span id="ammo-total">/ 24</span></div>
+      <div class="actions">
+        <button class="act search" data-btn="search" id="btn-search" hidden>BUSCAR</button>
+        <button class="act fire" data-btn="fire" aria-label="Disparar">🔫</button>
+        <button class="act knife" data-btn="knife" aria-label="Cuchillo">🔪</button>
+        <button class="act roll" data-btn="roll" aria-label="Voltereta">⤼</button>
+        <button class="act reload" data-btn="reload" aria-label="Recargar">⟳</button>
+        <button class="act sprint" data-btn="sprint" id="btn-sprint" aria-label="Correr">»</button>
+      </div>
+      <div id="vignette"></div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <section id="loading" class="screen">
+      <h1 class="logo">ZONA <span>MUERTA</span></h1>
+      <div class="progress"><div id="load-bar"></div></div>
+      <p id="load-text">Cargando…</p>
+    </section>
+
+    <section id="title" class="screen side" hidden>
+      <div class="panel">
+        <h1 class="logo">ZONA <span>MUERTA</span></h1>
+        <p class="sub">Sargento Valeria “Vale” Ríos · Última patrulla</p>
+        <button class="btn primary" data-action="continue" id="btn-continue">CONTINUAR</button>
+        <button class="btn" data-action="new">NUEVA PARTIDA</button>
+        <button class="btn" data-action="look">PERSONAJE</button>
+        <button class="btn" data-action="settings">AJUSTES</button>
+        <p class="hint">Mueve con el pulgar izquierdo, mira arrastrando a la derecha. Busca recursos, fabrica y sobrevive.</p>
+      </div>
+    </section>
+
+    <section id="pause" class="screen dim" hidden>
+      <div class="panel">
+        <h2>PAUSA</h2>
+        <button class="btn primary" data-action="resume">CONTINUAR</button>
+        <button class="btn" data-action="look">PERSONAJE</button>
+        <button class="btn" data-action="settings">AJUSTES</button>
+        <button class="btn" data-action="title">MENÚ PRINCIPAL</button>
+      </div>
+    </section>
+
+    <section id="bag" class="screen dim" hidden>
+      <div class="panel wide">
+        <div class="panel-head"><h2>MOCHILA</h2><button class="btn small" data-action="close">CERRAR</button></div>
+        <div class="cols">
+          <div><h3>Objetos</h3><ul id="bag-items" class="list"></ul></div>
+          <div><h3>Fabricar</h3><ul id="bag-recipes" class="list"></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="look" class="screen side" hidden>
+      <div class="panel">
+        <div class="panel-head"><h2>PERSONAJE</h2><button class="btn small" data-action="close-look">LISTO</button></div>
+        <p class="sub">Sargento Valeria “Vale” Ríos</p>
+        <div class="field"><span>Uniforme</span><div class="chips" data-look="outfit"></div></div>
+        <div class="field"><span>Peinado</span><div class="chips" data-look="hair"></div></div>
+        <div class="field"><span>Color de pelo</span><div class="chips" data-look="hairColor"></div></div>
+        <div class="field"><span>Ojos</span><div class="chips" data-look="eyes"></div></div>
+      </div>
+    </section>
+
+    <section id="settings" class="screen dim" hidden>
+      <div class="panel">
+        <div class="panel-head"><h2>AJUSTES</h2><button class="btn small" data-action="close-settings">LISTO</button></div>
+        <div class="field"><span>Calidad gráfica</span><div class="chips" id="quality"></div></div>
+        <label class="field"><span>Sensibilidad de cámara</span><input type="range" id="sensitivity" min="0.4" max="2" step="0.1" /></label>
+        <label class="field"><span>Volumen</span><input type="range" id="volume" min="0" max="1" step="0.05" /></label>
+      </div>
+    </section>
+
+    <section id="dead" class="screen dim red" hidden>
+      <div class="panel">
+        <h2>HAS CAÍDO</h2>
+        <p class="sub" id="dead-text"></p>
+        <button class="btn primary" data-action="respawn">VOLVER AL PUESTO</button>
+        <button class="btn" data-action="new">NUEVA PARTIDA</button>
+      </div>
+    </section>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
