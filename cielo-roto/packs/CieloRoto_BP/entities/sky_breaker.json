@@ -1,0 +1,84 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sky:sky_breaker",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "properties": {
+        "sky:gaze_x": {
+          "type": "float",
+          "range": [
+            -60.0,
+            60.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "sky:gaze_z": {
+          "type": "float",
+          "range": [
+            -60.0,
+            60.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        }
+      }
+    },
+    "component_groups": {
+      "sky:gone": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "sky_breaker",
+          "inanimate"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:persistent": {},
+      "minecraft:timer": {
+        "time": 38.0,
+        "looping": false,
+        "time_down_event": {
+          "event": "sky:gone"
+        }
+      }
+    },
+    "events": {
+      "sky:gone": {
+        "add": {
+          "component_groups": [
+            "sky:gone"
+          ]
+        }
+      }
+    }
+  }
+}

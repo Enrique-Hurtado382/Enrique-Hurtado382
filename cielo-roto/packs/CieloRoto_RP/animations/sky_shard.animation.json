@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.sky_shard.tumble": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            "q.life_time * (150.0 + q.variant * 40.0)",
+            "q.life_time * 30.0",
+            "q.life_time * (95.0 - q.variant * 25.0)"
+          ],
+          "scale": "0.7 + q.variant * 0.35"
+        }
+      }
+    }
+  }
+}

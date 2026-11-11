@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.sky_varita": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        },
+        {
+          "crystal": "Material.glow"
+        },
+        {
+          "ring_a": "Material.glow"
+        },
+        {
+          "ring_b": "Material.glow"
+        },
+        {
+          "orbarm_0": "Material.glow"
+        },
+        {
+          "orbarm_1": "Material.glow"
+        },
+        {
+          "orbarm_2": "Material.glow"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.s0",
+            "Texture.s1",
+            "Texture.s2",
+            "Texture.s3"
+          ]
+        }
+      },
+      "textures": [
+        "Array.skins[v.wand_stage]"
+      ]
+    }
+  }
+}

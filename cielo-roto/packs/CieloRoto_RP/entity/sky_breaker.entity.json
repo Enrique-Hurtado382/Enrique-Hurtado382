@@ -1,0 +1,58 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sky:sky_breaker",
+      "materials": {
+        "solid": "entity_alphatest",
+        "glass": "entity_alphablend",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "glass1": "textures/entity/sky_breaker/glass_1",
+        "glass2": "textures/entity/sky_breaker/glass_2",
+        "glass3": "textures/entity/sky_breaker/glass_3",
+        "hole": "textures/entity/sky_breaker/hole",
+        "eye": "textures/entity/sky_breaker/eye",
+        "hand": "textures/entity/sky_breaker/hand",
+        "forearm": "textures/entity/sky_breaker/forearm"
+      },
+      "geometry": {
+        "default": "geometry.sky_breaker"
+      },
+      "animations": {
+        "sequence": "animation.sky_breaker.sequence",
+        "gaze": "animation.sky_breaker.gaze"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.lt = q.life_time;",
+          "v.glass_alpha = math.clamp((v.lt - 0.9) / 0.5, 0, 1) * math.clamp((35.2 - v.lt) / 1.8, 0, 1);",
+          "v.glass_stage = v.lt < 2.4 ? 0 : (v.lt < 22.6 ? 1 : 2);",
+          "v.hole_stage = v.lt < 2.38 ? 0 : (v.lt < 22.580000000000002 ? 1 : (v.lt < 35.300000000000004 ? 2 : 0));",
+          "v.light_alpha = math.clamp((v.lt - 31.8) / 1.0, 0, 1) * math.clamp((35.1 - v.lt) / 1.2, 0, 1) * (0.8 + 0.2 * math.sin(v.lt * 720.0));",
+          "v.track = math.clamp((v.lt - 9.8) / 1.2, 0, 1) * math.clamp((21.6 - v.lt) / 0.8, 0, 1);",
+          "v.gx = math.lerp(v.gx ?? 0.0, q.property('sky:gaze_x') * v.track, 0.1);",
+          "v.gz = math.lerp(v.gz ?? 0.0, q.property('sky:gaze_z') * v.track, 0.1);",
+          "v.sx = (math.sin(v.lt * 497.0) * 0.5 + math.sin(v.lt * 131.0) * 0.7) * v.track;",
+          "v.sz = (math.sin(v.lt * 613.0 + 40.0) * 0.5 + math.sin(v.lt * 97.0) * 0.7) * v.track;"
+        ],
+        "animate": [
+          "sequence",
+          "gaze"
+        ],
+        "should_update_bones_and_effects_offscreen": true,
+        "should_update_effects_offscreen": true
+      },
+      "render_controllers": [
+        "controller.render.sky_breaker_eye",
+        "controller.render.sky_breaker_hand",
+        "controller.render.sky_breaker_forearm",
+        "controller.render.sky_breaker_hole",
+        "controller.render.sky_breaker_glow",
+        "controller.render.sky_breaker_glass"
+      ],
+      "enable_attachables": false
+    }
+  }
+}

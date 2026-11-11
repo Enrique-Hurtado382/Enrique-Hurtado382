@@ -1,0 +1,54 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Cielo Roto [BP]",
+    "description": "La Varita del Cielo: rompé el cielo como vidrio y mirá lo que hay detrás.",
+    "uuid": "5b0f2d8e-7a3c-4f61-9c0a-2d6b8e1f4a71",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      90
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "a3e94c17-2b58-4d0e-8f6a-c1d7e2b94f03",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "0c7d5e21-9f4b-4a38-b6e2-7d13a9c5f8e4",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0"
+    },
+    {
+      "uuid": "e8a1c6f3-4d27-4b9e-a5c0-3f8b2d7e6a19",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

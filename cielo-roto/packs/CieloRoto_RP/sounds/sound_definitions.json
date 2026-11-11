@@ -1,0 +1,149 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "sky.glass_creak": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/glass_creak",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.glass_shatter": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/glass_shatter",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.rumble": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/rumble",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.eye_hum": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/eye_hum",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.blink": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/blink",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.whoosh": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/whoosh",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.slam": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/slam",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.crack_ground": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/crack_ground",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.wand_charge": {
+      "category": "player",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/wand_charge",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.wand_cast": {
+      "category": "player",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/wand_cast",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.bolt": {
+      "category": "player",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/bolt",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    },
+    "sky.seal": {
+      "category": "ambient",
+      "min_distance": 4.0,
+      "max_distance": 160.0,
+      "sounds": [
+        {
+          "name": "sounds/sky/seal",
+          "volume": 1.0,
+          "load_on_low_memory": true
+        }
+      ]
+    }
+  }
+}

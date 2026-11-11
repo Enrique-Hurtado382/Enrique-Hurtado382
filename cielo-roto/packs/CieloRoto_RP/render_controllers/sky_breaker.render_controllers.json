@@ -1,0 +1,259 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.sky_breaker_eye": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.solid"
+        }
+      ],
+      "textures": [
+        "Texture.eye"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "eye_root": true
+        },
+        {
+          "socket": true
+        },
+        {
+          "gaze_wander": true
+        },
+        {
+          "gaze": true
+        },
+        {
+          "eye_r0": true
+        },
+        {
+          "eye_r1": true
+        },
+        {
+          "eye_r2": true
+        },
+        {
+          "eye_r3": true
+        },
+        {
+          "eye_r4": true
+        },
+        {
+          "eye_r5": true
+        },
+        {
+          "eye_r6": true
+        },
+        {
+          "pupil_pulse": true
+        },
+        {
+          "pupil": true
+        },
+        {
+          "lid_upper": true
+        },
+        {
+          "lid_upper_r0": true
+        },
+        {
+          "lid_upper_r1": true
+        },
+        {
+          "lid_upper_r2": true
+        },
+        {
+          "lid_lower": true
+        },
+        {
+          "lid_lower_r0": true
+        },
+        {
+          "lid_lower_r1": true
+        },
+        {
+          "lid_lower_r2": true
+        }
+      ]
+    },
+    "controller.render.sky_breaker_hand": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.solid"
+        }
+      ],
+      "textures": [
+        "Texture.hand"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "forearm": true
+        },
+        {
+          "hand": true
+        },
+        {
+          "palm": true
+        },
+        {
+          "f0_a": true
+        },
+        {
+          "f0_b": true
+        },
+        {
+          "f0_c": true
+        },
+        {
+          "f1_a": true
+        },
+        {
+          "f1_b": true
+        },
+        {
+          "f1_c": true
+        },
+        {
+          "f2_a": true
+        },
+        {
+          "f2_b": true
+        },
+        {
+          "f2_c": true
+        },
+        {
+          "f3_a": true
+        },
+        {
+          "f3_b": true
+        },
+        {
+          "f3_c": true
+        },
+        {
+          "thumb": true
+        },
+        {
+          "t_a": true
+        },
+        {
+          "t_b": true
+        },
+        {
+          "chunk": true
+        }
+      ]
+    },
+    "controller.render.sky_breaker_forearm": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.solid"
+        }
+      ],
+      "textures": [
+        "Texture.forearm"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "forearm": true
+        }
+      ]
+    },
+    "controller.render.sky_breaker_hole": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.solid"
+        }
+      ],
+      "textures": [
+        "Texture.hole"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "hole_small": "v.hole_stage == 1"
+        },
+        {
+          "hole_big": "v.hole_stage == 2"
+        }
+      ]
+    },
+    "controller.render.sky_breaker_glow": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.glow"
+        }
+      ],
+      "textures": [
+        "Texture.hole"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "light": true
+        }
+      ],
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": "v.light_alpha"
+      },
+      "ignore_lighting": true
+    },
+    "controller.render.sky_breaker_glass": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.glass"
+        }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.glass": [
+            "Texture.glass1",
+            "Texture.glass2",
+            "Texture.glass3"
+          ]
+        }
+      },
+      "textures": [
+        "Array.glass[v.glass_stage]"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "glass": true
+        }
+      ],
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": "v.glass_alpha"
+      },
+      "ignore_lighting": true
+    }
+  }
+}

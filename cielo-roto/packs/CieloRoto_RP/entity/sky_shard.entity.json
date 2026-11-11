@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "sky:shard",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "s0": "textures/entity/sky_shard/shard_0",
+        "s1": "textures/entity/sky_shard/shard_1",
+        "s2": "textures/entity/sky_shard/shard_2",
+        "s3": "textures/entity/sky_shard/shard_3"
+      },
+      "geometry": {
+        "default": "geometry.sky_shard"
+      },
+      "animations": {
+        "tumble": "animation.sky_shard.tumble"
+      },
+      "scripts": {
+        "animate": [
+          "tumble"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.sky_shard"
+      ]
+    }
+  }
+}

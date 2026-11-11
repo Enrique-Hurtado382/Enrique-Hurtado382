@@ -1,0 +1,118 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.sky_varita.hold_first_person": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            "-7.0 + v.charge * 1.5",
+            "-3.0 + v.charge * 5.5 + v.burst * 2.0",
+            "-2.0 - v.charge * 1.0"
+          ],
+          "rotation": [
+            "152.0 - v.charge * 50.0 - v.burst * 12.0",
+            "-9.0 + v.charge * 6.0",
+            "25.0 - v.charge * 12.0"
+          ]
+        }
+      }
+    },
+    "animation.sky_varita.hold_third_person": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            1.5,
+            -2.5,
+            -10.5
+          ],
+          "rotation": [
+            97,
+            -1.5,
+            -49
+          ]
+        }
+      }
+    },
+    "animation.sky_varita.fx": {
+      "loop": true,
+      "bones": {
+        "ring_a": {
+          "rotation": [
+            20,
+            "v.spin",
+            0
+          ],
+          "scale": "1.0 + v.charge * 0.25 + v.burst * 1.4"
+        },
+        "ring_b": {
+          "rotation": [
+            "v.spin * -1.35",
+            70,
+            0
+          ],
+          "scale": "1.0 + v.charge * 0.15 + v.burst * 2.0"
+        },
+        "crystal": {
+          "rotation": [
+            0,
+            "v.spin * 0.5",
+            0
+          ],
+          "scale": "v.crystal_scale",
+          "position": [
+            0,
+            "math.sin(q.life_time * 200.0) * 0.4 + v.charge * 1.5 + v.burst",
+            0
+          ]
+        },
+        "orb_0": {
+          "rotation": [
+            0,
+            "v.spin * 1.00 + 0.0",
+            0
+          ]
+        },
+        "orbarm_0": {
+          "position": [
+            "v.orbit_r - 4.8",
+            "math.sin(q.life_time * 150.0 + 0.0) * 0.5",
+            0
+          ],
+          "scale": "0.9 + v.charge * 0.6 + v.burst * 0.8"
+        },
+        "orb_1": {
+          "rotation": [
+            0,
+            "v.spin * 1.30 + 120.0",
+            0
+          ]
+        },
+        "orbarm_1": {
+          "position": [
+            "v.orbit_r - 4.8",
+            "math.sin(q.life_time * 150.0 + 120.0) * 0.5",
+            0
+          ],
+          "scale": "0.9 + v.charge * 0.6 + v.burst * 0.8"
+        },
+        "orb_2": {
+          "rotation": [
+            0,
+            "v.spin * 1.60 + 240.0",
+            0
+          ]
+        },
+        "orbarm_2": {
+          "position": [
+            "v.orbit_r - 4.8",
+            "math.sin(q.life_time * 150.0 + 240.0) * 0.5",
+            0
+          ],
+          "scale": "0.9 + v.charge * 0.6 + v.burst * 0.8"
+        }
+      }
+    }
+  }
+}

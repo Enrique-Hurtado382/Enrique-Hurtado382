@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Cielo Roto [RP]",
+    "description": "Modelos, animaciones, partículas y sonidos de la Varita del Cielo.",
+    "uuid": "e8a1c6f3-4d27-4b9e-a5c0-3f8b2d7e6a19",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      90
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "4f6b3a9d-1e85-4c72-9b0d-6a2f8c3e5d17",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

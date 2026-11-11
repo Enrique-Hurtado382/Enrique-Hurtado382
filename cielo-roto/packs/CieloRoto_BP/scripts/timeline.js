@@ -1,0 +1,42 @@
+// Generado por tools/build.py: NO editar a mano (editar tools/gen/common.py).
+export const T = {
+  bolt_arrive: 1.0,
+  creak2: 1.7,
+  punch: 2.4,
+  punch_bottom: 2.65,
+  fist_hold_end: 3.8,
+  fist_hidden: 4.5,
+  eye_enter: 5.6,
+  eye_settle: 6.8,
+  eye_open: 7.0,
+  eye_open_end: 7.45,
+  eye_look_a: 7.7,
+  eye_look_b: 8.7,
+  eye_center: 9.6,
+  track_start: 9.8,
+  track_full: 11.0,
+  blink1: 12.4,
+  blink2: 16.1,
+  blink3: 19.3,
+  eye_squint: 21.0,
+  eye_leave: 21.6,
+  eye_hidden: 22.2,
+  hole_grow: 22.6,
+  arm_start: 23.4,
+  slam: 26.0,
+  press_end: 27.3,
+  grab_start: 27.6,
+  grab_end: 28.6,
+  lift_start: 29.0,
+  lift_end: 31.0,
+  arm_hidden: 31.4,
+  light_on: 31.8,
+  light_peak: 32.8,
+  heal_start: 33.4,
+  heal_end: 35.2,
+  despawn: 36.5,
+};
+export const CAST_SECONDS = 3.0;
+export const HOLE_HEIGHT = 80;
+export const COOLDOWN_CATEGORY = "sky_varita";
+export const HAND_SLAM_BLOCKS = 78.250;

@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "sky:varita_del_cielo",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "s0": "textures/entity/sky_varita/varita_0",
+        "s1": "textures/entity/sky_varita/varita_1",
+        "s2": "textures/entity/sky_varita/varita_2",
+        "s3": "textures/entity/sky_varita/varita_3"
+      },
+      "geometry": {
+        "default": "geometry.sky_varita"
+      },
+      "animations": {
+        "hold_first_person": "animation.sky_varita.hold_first_person",
+        "hold_third_person": "animation.sky_varita.hold_third_person",
+        "fx": "animation.sky_varita.fx"
+      },
+      "scripts": {
+        "pre_animation": [
+          "v.cd_total = q.cooldown_time('slot.weapon.mainhand');",
+          "v.cd_rem = q.cooldown_time_remaining('slot.weapon.mainhand');",
+          "v.cast_t = (v.cd_total > 0.0 && v.cd_rem > 0.0) ? (v.cd_total - v.cd_rem) : -1.0;",
+          "v.charge = (v.cast_t >= 0.0 && v.cast_t < 3.0) ? math.clamp(v.cast_t / 3.0, 0, 1) : 0.0;",
+          "v.burst = (v.cast_t >= 3.0 && v.cast_t < 3.7) ? (1.0 - (v.cast_t - 3.0) / 0.7) : 0.0;",
+          "v.recharge = (v.cast_t >= 3.7) ? 1.0 : 0.0;",
+          "v.spin_speed = 70.0 + v.charge * v.charge * 900.0 + v.burst * 500.0;",
+          "v.spin = (v.spin ?? 0.0) + v.spin_speed * q.delta_time;",
+          "v.spin = v.spin > 36000.0 ? v.spin - 36000.0 : v.spin;",
+          "v.wand_stage = v.burst > 0.0 ? 2 : (v.charge > 0.33 ? 1 : (v.recharge > 0.0 ? 3 : 0));",
+          "v.orbit_r = 4.8 - v.charge * 2.6 + v.burst * 6.0;",
+          "v.crystal_scale = 1.0 + v.charge * 0.5 + v.burst * 1.6 - v.recharge * 0.25;"
+        ],
+        "animate": [
+          {
+            "hold_first_person": "c.is_first_person"
+          },
+          {
+            "hold_third_person": "!c.is_first_person"
+          },
+          "fx"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.sky_varita"
+      ]
+    }
+  }
+}
