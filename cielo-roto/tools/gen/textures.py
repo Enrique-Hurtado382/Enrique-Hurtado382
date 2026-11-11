@@ -447,7 +447,7 @@ def paint_eye_atlas(records, size=1024):
 class CrackWeb:
     """Telaraña de grietas compartida por el vidrio, el agujero y el ícono."""
 
-    def __init__(self, seed=7, n_rays=17, n_rings=8):
+    def __init__(self, seed=7, n_rays=21, n_rings=8):
         rng = np.random.default_rng(seed)
         self.n_rays, self.n_rings = n_rays, n_rings
         self.base = np.linspace(0, 2 * math.pi, n_rays, endpoint=False) + rng.uniform(-0.09, 0.09, n_rays)
@@ -458,23 +458,23 @@ class CrackWeb:
             while rr < r_end:
                 pts.append((rr, a))
                 rr += 0.028 * rng.uniform(0.8, 1.2)
-                a += rng.normal(0, 0.05)
+                a += rng.normal(0, 0.012)
             pts.append((r_end, a))
             self.rays.append(pts)
         r0 = HOLE_R_SMALL / (GLASS_SIZE / 2)
         self.ring_r = [r0 * (1 / r0) ** ((k + 1) / (n_rings + 1)) for k in range(n_rings)]
         self.ring_jit = rng.uniform(0.94, 1.06, (n_rings, n_rays))
-        self.ring_gap = rng.random((n_rings, n_rays)) < 0.16
+        self.ring_gap = rng.random((n_rings, n_rays)) < 0.07
         self.ring_mid = rng.uniform(-0.012, 0.012, (n_rings, n_rays))
         self.secondary = []
         for i in range(n_rays):
             for k in (1, 3, 5):
                 if rng.random() < 0.6:
-                    self.secondary.append((i, k, rng.uniform(0.25, 0.7), rng.uniform(0.3, 0.7), rng.normal(0, 0.05)))
+                    self.secondary.append((i, k, rng.uniform(0.25, 0.7), rng.uniform(0.3, 0.7), rng.normal(0, 0.015)))
         self.hole_shape = rng.uniform(0.82, 1.18, 2 * n_rays)
         self.shine = rng.random((n_rings, n_rays)) < 0.45
         self.shine_a = rng.uniform(0.05, 0.16, (n_rings, n_rays))
-        self.extra = [(rng.uniform(0, 2 * math.pi), rng.uniform(0.2, 0.9), int(rng.uniform(3, 8)), rng.normal(0, 0.1)) for _ in range(40)]
+        self.extra = [(rng.uniform(0, 2 * math.pi), rng.uniform(0.2, 0.9), int(rng.uniform(3, 8)), rng.normal(0, 0.03)) for _ in range(40)]
 
     def ray_angle(self, i, rr):
         pts = self.rays[i]

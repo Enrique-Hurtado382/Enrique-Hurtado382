@@ -338,8 +338,17 @@ def clean(path):
 
 def build_all(skip_sounds=False):
     BP, RP = C.BP, C.RP
+    keep = None
+    if skip_sounds and os.path.isdir(os.path.join(RP, "sounds/sky")):
+        keep = os.path.join(C.DIST, "_sounds_cache")
+        if os.path.isdir(keep):
+            shutil.rmtree(keep)
+        shutil.copytree(os.path.join(RP, "sounds/sky"), keep)
     clean(BP)
     clean(RP)
+    if keep:
+        shutil.copytree(keep, os.path.join(RP, "sounds/sky"))
+        shutil.rmtree(keep)
 
     # --- geometrías y registros de UV ---
     sky = geometry.build_sky_breaker()
