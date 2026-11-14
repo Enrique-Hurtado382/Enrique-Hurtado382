@@ -1,0 +1,13 @@
+{
+  "appId": "com.enriquehurtado.mototoma",
+  "appName": "MotoToma",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#0b0d12"
+  },
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}

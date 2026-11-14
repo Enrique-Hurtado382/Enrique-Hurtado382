@@ -1,0 +1,27 @@
+{
+  "name": "mototoma",
+  "version": "1.0.0",
+  "description": "MotoToma: cámara que te guía en tiempo real para grabar edits de motos.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/build-icons.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --serve",
+    "test": "node --test test/*.test.js",
+    "android": "npm run build && npx cap sync android",
+    "apk": "npm run android && cd android && ./gradlew assembleDebug"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/haptics": "^8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2",
+    "esbuild": "^0.28.2",
+    "sharp": "^0.35.5"
+  }
+}
